@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liferestart.mapper.EventMapper">
+    <select id="query" resultType="com.liferestart.entity.form.response.EventResponse">
+        SELECT id,
+        `type_code` typeCode,
+        `is_repeat` isRepeat,
+        `event_code` eventCode,
+        `event_name` eventName,
+        `value`,
+        `remark`,
+        `luck`,
+        `social`,
+        `charm`,
+        `intelligence`,
+        `wealth`,
+        `family_circumstances` familyCircumstances,
+        `strength`,
+        `health`,
+        `life`,
+        `mood`,
+        `isAlive`
+        FROM tb_event e
+        <where>
+            <if test="age !=null">
+                and #{age} between min_age and max_age
+            </if>
+            <if test="mood !=null">
+                and #{mood} between min_mood and max_mood
+            </if>
+            <if test="health !=null">
+                and #{health} between min_health and max_health
+            </if>
+            <if test="strength !=null">
+                and #{strength} between min_strength and max_strength
+            </if>
+            <if test="familyCircumstances !=null">
+                and #{familyCircumstances} between min_family_circumstances and max_family_circumstances
+            </if>
+            <if test="wealth !=null">
+                and #{wealth} between min_wealth and max_wealth
+            </if>
+            <if test="intelligence !=null">
+                and #{intelligence} between min_intelligence and max_intelligence
+            </if>
+            <if test="charm !=null">
+                and #{charm} between min_charm and max_charm
+            </if>
+            <if test="social !=null">
+                and #{social} between min_social and max_social
+            </if>
+            <if test="luck !=null">
+                and #{luck} between min_luck and max_luck
+            </if>
+            <if test="typeCode !=null">
+                and type_code = #{typeCode}
+            </if>
+        </where>
+    </select>
+
+</mapper>

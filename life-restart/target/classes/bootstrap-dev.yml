@@ -1,0 +1,14 @@
+server:
+  port: 5782
+
+spring:
+  application:
+    name: life-restart
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  datasource:
+    url: jdbc:mysql://localhost:3306/life_restart?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: CXHLGiue170614

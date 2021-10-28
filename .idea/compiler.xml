@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dnd-tablegame-assistant" />
+        <module name="dnd-assistant-api" />
+        <module name="dnd-monsterinfo" />
+        <module name="life-restart" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dnd-info" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="dnd-assistant-api" options="-parameters" />
+      <module name="dnd-info" options="-parameters" />
+      <module name="dnd-monsterinfo" options="-parameters" />
+      <module name="life-restart" options="-parameters" />
+    </option>
+  </component>
+</project>
